@@ -1,5 +1,5 @@
-#include <dialogs.h>
 #include <vliv.h>
+#include <dialogs.h>
 
 #include <commctrl.h>
 #include <commdlg.h>
@@ -43,22 +43,24 @@ INT_PTR DialogProcAbout (HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam) 
 }
 
 const char* credits = 
-"libtiff 4.3.0\n"
+"libtiff 4.7.0\n"
 "   Copyright (c) 1988-1997 Sam Leffler\n"
 "   Copyright (c) 1991-1997 Silicon Graphics, Inc.\n\n"
-"libpng 1.6.37\n"
-"   Copyright (c) 1995-2019 The PNG Reference Library Authors.\n"
-"   Copyright (c) 2018-2019 Cosmin Truta.\n"
+"libpng 1.6.50\n"
+"   Copyright (c) 1995-2025 The PNG Reference Library Authors.\n"
+"   Copyright (c) 2018-2025 Cosmin Truta.\n"
 "   Copyright (c) 2000-2002, 2004, 2006-2018 Glenn Randers-Pehrson.\n"
 "   Copyright (c) 1996-1997 Andreas Dilger.\n"
 "   Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.\n\n"
-"zlib 1.2.11\n"
-"   Copyright (c)  1995-2017 Jean-loup Gailly and Mark Adler\n\n"
+"zlib 1.3.1\n"
+"   Copyright (c)  1995-2024 Jean-loup Gailly and Mark Adler\n\n"
 "libjpeg 6b\n"
 "   Copyright (c) 1994-1998, Thomas G. Lane.\n\n"
-"libjpeg-turbo 2.1.2\n"
-"   Copyright (c)2009-2021 D. R. Commander.\n"
+"libjpeg-turbo 3.1.0\n"
+"   Copyright (c)2009-2024 D. R. Commander.\n"
 "   Copyright (c)2015 Viktor Szathmáry.\n\n"
+"libwebp 0.4.1\n"
+"   Copyright 2010 Google Inc..\n\n"
 "Ownd\n"
 "   Copyright (c) 1998 Russell Freeman."
 ;

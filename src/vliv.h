@@ -1,10 +1,11 @@
 #ifndef _VLIV_H
 #define _VLIV_H
 
+#include <windows.h>
+#include <errhandlingapi.h>
 #ifndef _WIN32_WINNT
 #define _WIN32_WINNT 0x0501
 #endif
-#include <windows.h>
 
 #define VLIV_EXPORT(type) type
 #define VLIV_IMPORT(type) type
@@ -48,6 +49,8 @@ typedef enum {
 // plugin entry point
 typedef void (*REGISTERPLUGINF)(struct Image* img);
 
+typedef void (*FILLCMAP)(BITMAPINFO* bmi, unsigned int idx, void* arg);
+
 // helper for internal Vliv function access
 typedef HBITMAP (*VLIVCREATETRUECOLORDIBSECTIONF)(HDC hdc, 
 						  int width, 
@@ -58,7 +61,7 @@ typedef HBITMAP (*VLIVCREATEINDEXEDDIBSECTIONF)(HDC hdc,
 						int width, 
 						int height, 
 						unsigned int** bits, 
-						void (*fillcmap)(BITMAPINFO* bmi, unsigned int idx, void* arg),
+						FILLCMAP fillcmap,
 						void* arg);
 
 typedef HBITMAP (*VLIVCREATEDEFAULTDIBSECTIONF)(HDC hdc,
@@ -102,9 +105,6 @@ typedef struct {
 #define MYREALLOC(data, size) HeapReAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, data, size);
 
 HMODULE languageInst;
-
-VLIV_EXPORT(void) ShowLastError(LPTSTR lpszFunction);
-
 
 
 #endif
